@@ -1,0 +1,142 @@
+To increase connection pool size in mysql
+--------------------------------------
+https://stackoverflow.com/questions/19822558/how-to-set-max-connections-in-mysql-programmatically
+--------------------------------------
+mysql> SET GLOBAL max_connections = 5000;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SHOW VARIABLES LIKE "max_connections";
++-----------------+-------+
+| Variable_name   | Value |
++-----------------+-------+
+| max_connections | 5000  |
++-----------------+-------+
+1 row in set (0.00 sec)
+
+
+https://commons.apache.org/proper/commons-dbcp/configuration.html
+--------------------------------------
+http://www.mastertheboss.com/jboss-frameworks/hibernate-jpa/hibernate-configuration/configure-a-connection-pool-with-hibernate
+--------------------------------------
+
+
+Configure C3P0 Connection Pool
+------------------------------
+Here's a sample configuration for the built-in Connection pool:
+
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/myschema</property>
+  <property name="hibernate.connection.username">user</property>
+  <property name="hibernate.connection.password">password</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="show_sql">true</property>
+  
+  <property name="hibernate.c3p0.min_size">5</property>
+  <property name="hibernate.c3p0.max_size">20</property>
+  <property name="hibernate.c3p0.timeout">300</property>
+  <property name="hibernate.c3p0.max_statements">50</property>
+  <property name="hibernate.c3p0.idle_test_period">3000</property>
+  
+  . . . .
+</session-factory>
+
+
+
+Configure Apache DBCP Connection Pool
+--------------------------------------
+Apache Connection Pool can be downloaded from http://commons.apache.org/dbcp/
+
+In order to integrate this pool with Hibernate you will need the following jars: commons-dbcp.jar and commons-pool-1.5.4.jar.
+
+Here's a sample configuration in hibernate.cfg.xml:
+
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/myschema</property>
+  <property name="hibernate.connection.username">user</property>
+  <property name="hibernate.connection.password">password</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="show_sql">true</property>
+  
+  <property name="hibernate.dbcp.initialSize">8</property>
+  <property name="hibernate.dbcp.maxActive">20</property>
+  <property name="hibernate.dbcp.maxIdle">20</property>
+  <property name="hibernate.dbcp.minIdle">0</property>
+  
+  . . . .
+</session-factory>
+
+https://stackoverflow.com/questions/9804892/how-to-set-the-max-pool-size-or-connection-size-for-basicdatasource-in-spring-fr
+---------------------
+<bean:property name="initialSize" value="1" />
+<bean:property name="maxActive"   value="5" />
+<bean:property name="maxIdle"     value="2" />
+
+
+https://commons.apache.org/proper/commons-dbcp/configuration.html
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+UPDATE news SET news_createddate = CONCAT('2017-10-02 ', TIME(news_createddate)) WHERE  news_id=7777;
+commit;
+----------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------
+UPDATE news SET news_createddate = now() WHERE  news_id=7777;
+commit;
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/20773886/how-to-capture-current-date-and-time-in-a-variable-in-jsp-using-jstl
+
+<fmt:formatDate type="time" value="${now}" /><br/>
+<fmt:formatDate type="date" value="${now}" /><br/>
+<fmt:formatDate type="both" value="${now}" /><br/>
+<fmt:formatDate type="both" dateStyle="short" timeStyle="short"
+    value="${now}" /><br/>
+<fmt:formatDate type="both" dateStyle="medium" timeStyle="medium"
+    value="${now}" /><br/>
+<fmt:formatDate type="both" dateStyle="long" timeStyle="long"
+    value="${now}" /><br/>
+<fmt:formatDate pattern="yyyy-MM-dd" value="${now}" /><br/>
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/12522484/how-to-get-current-time-hours-using-only-jsp
+<jsp:useBean id="date" class="java.util.Date"/>
+
+<fmt:formatDate var="time"  
+                value="${date}"
+                pattern="HHmm"/>
+<br/>${time}
+------------------------------------------------------all tag library examples----------------------------------------------------------------------------
+
+https://www.tutorialspoint.com/jsp/jsp_standard_tag_library.htm
+
+
+-------------------------------------------------------------auto complete--------------------------------------------------------------------
+
+http://phppot.com/jquery/jquery-ajax-autocomplete-country-example/
+----------------------------------------------------------------------------------------------------------------------------------

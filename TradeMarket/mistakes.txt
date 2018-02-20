@@ -1,0 +1,56 @@
+	--------------------------------------------------------------------------------------------------------
+	
+	NOte: if you change anything in spring-datebase.xml. please apply same changes in spring-database-test.xml
+	
+	--------------------------------------------------------------------------------------------------------
+	Note: id="MostReadDao" should be id="mostReadDao". here MostReadDao should not used as case sesnsitive
+	<bean id="mostReadDao" class="com.console.users.dao.MostReadDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="mostReadDaoService" class="com.console.users.service.MostReadDaoService">
+		<property name="mostReadDao" ref="mostReadDao" />
+	</bean>
+	
+	<bean id="sectorsDao" class="com.console.users.dao.SectorsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="sectorsDaoService" class="com.console.users.service.SectorsDaoService">
+		<property name="SectorsDao" ref="sectorsDao" />
+	</bean>
+	
+	
+	------------------------------------------in console --------------------------------------------------------------
+	Uncaught SyntaxError: Unexpected string
+	home:2333 Uncaught ReferenceError: getTopNews is not defined
+	    at HTMLDocument.<anonymous> (home:2333)
+	    at c (jquery.min.js:4)
+	    at Object.fireWith [as resolveWith] (jquery.min.js:4)
+	    at Function.ready (jquery.min.js:4)
+	    at HTMLDocument.q (jquery.min.js:4)
+	
+	
+	
+	function  getSectors(){
+	$.ajax({
+	alert('sectors');
+	});
+	
+	i removed alert('sectors');
+	after top news was loaded.
+	
+	
+	------------------------------------------page is refreshing after click on sectors --------------------------------------------------------------
+	
+	
+	have you observed on click of sectors? on click on sectors tabs entire page is refreshing.
+	it should not be like that.
+	after adding href="" as a href="#", it is not loading entire page.
+	
+	------------------------------------------please test and observe search box --------------------------------------------------------------
+	
+	
+	
+	
+}https://stackoverflow.com/questions/22524470/spring-security-3-2-csrf-disable-for-specfic-urls
