@@ -1,0 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page isELIgnored="false" %>
+<ol class="w3_tab_list_home">
+	<c:forEach items="${listTopNews}" var="listTopNewsVar">
+   		<li>
+   		<%-- <span><fmt:formatDate type="both" pattern="HH:mm" value="${listTopNewsVar.createdDate}" /></span> --%>
+   		<a href="">${listTopNewsVar.topNewsName}</a></li>
+   	</c:forEach>
+</ol>

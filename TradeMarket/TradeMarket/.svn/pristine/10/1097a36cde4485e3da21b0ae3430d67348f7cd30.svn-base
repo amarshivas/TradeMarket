@@ -1,0 +1,57 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 10, 2017 at 01:44 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `trademarket`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stockticker`
+--
+
+CREATE TABLE `stockticker` (
+  `stocktickerID` bigint(10) NOT NULL,
+  `indexname` varchar(30) NOT NULL,
+  `pricevalue` float NOT NULL,
+  `chngedvalue` float NOT NULL,
+  `changeper` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stockticker`
+--
+
+INSERT INTO `stockticker` (`stocktickerID`, `indexname`, `pricevalue`, `chngedvalue`, `changeper`) VALUES
+(5001, 'SENSEX', 27993.6, -66.59, -0.24),
+(5002, 'NHAI', 1256, 16.2, 1.31),
+(5003, 'Euro-Rupee', 75.42, 0.03, 0.04),
+(5004, 'IIFL', 1006.51, -1.25, -0.12),
+(5005, 'NIFTY50', 8638.23, -8.35, -0.1),
+(5006, 'SILVER', 46343.6, -186, -0.4),
+(5007, 'Dollar-Rupee', 66.865, 0, 0),
+(5008, 'CRUDEOIL', 3097, -7, -0.23),
+(5009, 'GOLD', 31350.2, -117, -0.37),
+(5010, 'FTSC', 6887.93, -5.99, -0.09),
+(5011, 'CAC', 4436.7, -23, 0.54),
+(5012, 'DAX', 10596, -79.89, -0.75);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,58 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 02, 2017 at 03:40 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `trademarket`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `news_id` bigint(20) NOT NULL,
+  `news_name` varchar(100) NOT NULL,
+  `news_displayname` varchar(200) NOT NULL,
+  `news_url` varchar(100) DEFAULT NULL,
+  `news_rating` int(10) DEFAULT NULL,
+  `news_hitcount` int(10) DEFAULT NULL,
+  `news_createddate` datetime DEFAULT NULL,
+  `news_lastmodifieddate` datetime DEFAULT NULL,
+  `lastmodifiedby` bigint(10) DEFAULT NULL,
+  `news_createdby` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`news_id`, `news_name`, `news_displayname`, `news_url`, `news_rating`, `news_hitcount`, `news_createddate`, `news_lastmodifieddate`, `lastmodifiedby`, `news_createdby`) VALUES
+(7770, 'mostread', 'IPO preview: ICICI Lombards valuation steep, but a decent bet', '', 4, 232, '0000-00-00 00:00:00', '2017-10-02 12:45:56', 0, 2017),
+(7771, 'mostread', 'BUY or SELL ideas from experts for Thursday, 14 September 2017', '', 3, 236, '0000-00-00 00:00:00', '2017-10-02 12:45:56', 0, 2017),
+(7772, 'mostread', 'Enfield local demand to sustain Eicher valuations', '', 4, 239, '0000-00-00 00:00:00', '2017-10-02 12:45:56', 0, 2017),
+(7773, 'mostread', 'Asia stocks step back from decade high as China posts rare data miss', '', 3, 243, '0000-00-00 00:00:00', '2017-10-02 12:45:56', 0, 2017),
+(7774, 'mostread', 'Top stocks in focus on Thursday, 14 September 2017', '', 3, 245, '0000-00-00 00:00:00', '2017-10-02 12:45:56', 0, 2017),
+(7775, 'mostread', 'What changed your market while you were asleep', '', 6, 248, '0000-00-00 00:00:00', '2017-10-02 12:45:56', 0, 2017),
+(7776, 'mostread', 'Religare institutional shareholders move court seeking ouster of board', '', 4, 222, '0000-00-00 00:00:00', '2017-10-02 12:45:56', 0, 2017),
+(7777, 'mostread', 'InterGlobe Aviations share sale to fetch up to Rs 3,945 crore', '', 3, 217, '0000-00-00 00:00:00', '2017-10-02 12:45:56', 0, 2017);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,100 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 10, 2017 at 01:44 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `trademarket`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `world`
+--
+
+CREATE TABLE `world` (
+  `content_id` int(11) NOT NULL,
+  `content_name` varchar(50) NOT NULL,
+  `index_name` varchar(50) NOT NULL,
+  `price` float NOT NULL,
+  `value` float NOT NULL,
+  `index_url` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `world`
+--
+
+INSERT INTO `world` (`content_id`, `content_name`, `index_name`, `price`, `value`, `index_url`) VALUES
+(8101, 'Global', 'The Global Dow(world)', 2891.23, 3.7, ''),
+(8101, 'Global', 'The Global Dow Euro(world)', 2277.47, 6.5, ''),
+(8101, 'Global', 'DJ Global Index(world)', 375.18, 4.6, ''),
+(8101, 'Global', 'DJ Global ex U.S.(world)', 254.88, 1.6, ''),
+(8102, 'Asia Pacific', 'All Ordinaries (Australia)', 5806.4, 1.6, ''),
+(8102, 'Asia Pacific', 'S & P/ASX 200 (Australia)', 5746.4, 1.3, ''),
+(8102, 'Asia Pacific', 'Dow Jones China 88 (China)', 316.73, 17.9, ''),
+(8102, 'Asia Pacific', 'Shanghai Composite (China)', 3379.49, 13.2, ''),
+(8102, 'Asia Pacific', 'Hang Seng (Hong Kong)', 27972.2, 4.4, ''),
+(8102, 'Asia Pacific', 'S & P BSE Sensex (India)', 32158.7, 5.9, ''),
+(8102, 'Asia Pacific', 'Jakarta Composite (Indonesia)', 5872.38, 4.5, ''),
+(8102, 'Asia Pacific', 'Nikkei 300 (Japan)', 319.94, 6.5, ''),
+(8102, 'Asia Pacific', 'Nikkei Stock Avg (Japan)', 19776.6, 7.4, ''),
+(8102, 'Asia Pacific', 'Topix Index (Japan)', 1627.45, 7.4, ''),
+(8102, 'Asia Pacific', 'Kuala Lumpur Composite (Malaysia)', 1789.86, 1.2, ''),
+(8102, 'Asia Pacific', 'S & P/NZX 50 (New Zealand)', 7840.41, 14.5, ''),
+(8102, 'Asia Pacific', 'PSEi (Philippines)', 8049.31, 3.8, ''),
+(8102, 'Asia Pacific', 'Straits Times (Singapore)', 3235.69, 1.1, ''),
+(8102, 'Asia Pacific', 'Kospi (South Korea)', 2365.47, 5, ''),
+(8102, 'Asia Pacific', 'Colombo Stock Exchange (Sri Lanka)', 6377.38, 4, ''),
+(8102, 'Asia Pacific', 'Weighted (Taiwan)', 10610.3, 4.8, ''),
+(8102, 'Asia Pacific', 'SET (Thailand)', 1643.55, 1.3, ''),
+(8103, 'Europe', 'Stoxx Europe 600 (Europe)', 381.42, 3.5, ''),
+(8103, 'Europe', 'Stoxx Europe 50 (Europe)', 3104.1, 0.4, ''),
+(8103, 'Europe', 'Euro Stoxx 50 (Euro zone)', 3512.56, 2.8, ''),
+(8103, 'Europe', 'Euro Stoxx (Euro zone)', 3512.56, 5.5, ''),
+(8103, 'Europe', 'ATX (Austria)', 3512.56, 12.5, ''),
+(8103, 'Europe', 'Bel-20 (Belgium)', 3995.2, 8, ''),
+(8103, 'Europe', 'PX 50 (Czech Republic)', 3995.2, 1.3, ''),
+(8103, 'Europe', 'OMX Copenhagen (Denmark)', 926.33, 10.4, ''),
+(8103, 'Europe', 'OMX Helsinki (Finland)', 9615.01, 8, ''),
+(8103, 'Europe', 'CAC 40 (France)', 5209.01, 5.5, ''),
+(8103, 'Europe', 'DAX (Germany)', 12524.8, 9.1, ''),
+(8103, 'Europe', 'BUX (Hungary)', 38076.9, 26.8, ''),
+(8103, 'Europe', 'FTSE MIB (Italy)', 22233.4, 1.8, ''),
+(8103, 'Europe', 'AEX (Netherlands)', 526.58, 8, ''),
+(8103, 'Europe', 'All-Shares (Norway)', 830.6, 6.9, ''),
+(8103, 'Europe', 'WIG (Poland)', 64826.1, 6.3, ''),
+(8103, 'Europe', 'PSI 20 (Portugal)', 5138.27, 4.5, ''),
+(8103, 'Europe', 'RTS Index (Russia)', 1124.23, 2.5, ''),
+(8103, 'Europe', 'IBEX 35 (Spain)', 10336.2, 1.7, ''),
+(8103, 'Europe', 'SX All Share (Sweden)', 566.01, 8.2, ''),
+(8103, 'Europe', 'Swiss Market (Switzerland', 9053.62, 1, ''),
+(8103, 'Europe', 'BIST 100 (Turkey)', 109130, 11.9, ''),
+(8103, 'Europe', 'FTSE 100 (U.K.)', 7400.69, 2.8, ''),
+(8103, 'Europe', 'FTSE 250 (U.K.)', 19665.9, 7.8, ''),
+(8104, 'Americas', 'DJ Americas (Americas)', 602.56, 6.8, ''),
+(8104, 'Americas', 'Merval (Argentina)', 23529.2, 28.6, ''),
+(8104, 'Americas', 'Sao Paulo Bovespa (Brazil)', 74538.5, 9.4, ''),
+(8104, 'Americas', 'S & P/TSX Comp (Canada)', 15143.4, 0.8, ''),
+(8104, 'Americas', 'Santiago IPSA (Chile)', 3925, 6, ''),
+(8104, 'Americas', 'IPC All-Share (Mexico)', 50481, 3.3, ''),
+(8105, 'Other Countries', 'Tel Aviv (Israel)', 1412.6, 0.3, ''),
+(8105, 'Other Countries', 'Johannesburg All Share (South Africa)', 56366.2, 3.2, '');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,62 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 01, 2017 at 08:45 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `trademarket`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `topnews`
+--
+
+CREATE TABLE `topnews` (
+  `topnews_id` int(20) NOT NULL,
+  `topnews_name` varchar(300) NOT NULL,
+  `topnews_url` varchar(300) DEFAULT NULL,
+  `news_id` int(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `topnews`
+--
+
+INSERT INTO `topnews` (`topnews_id`, `topnews_name`, `topnews_url`, `news_id`) VALUES
+(215, 'InterGlobe Aviation shares slip ahead of $616 million QIP', '', 325),
+(216, 'Suditi Industries surges on deal with Anushka Sharmas company\r\n', '', 326),
+(217, 'Market Now: Broader midcap and smallcap indices outperform benchmarks', '', 327),
+(218, 'Bullet train project: BHEL rallies on rolling stock contract', '', 328),
+(219, 'BPCL, HPCL and IOC rally as Pradhan says no to fuel price intervention', '', 329),
+(221, 'Market Now: Divis Lab, RIL among most active stocks in terms of value', '', 331),
+(223, 'MFIs role as banking correspondents pays off', '', 333),
+(224, 'Banks shy away from companies facing NCLT action', '', 334);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `topnews`
+--
+ALTER TABLE `topnews`
+  ADD PRIMARY KEY (`topnews_id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

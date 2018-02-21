@@ -1,0 +1,43 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               5.7.19 - MySQL Community Server (GPL)
+-- Server OS:                    Win64
+-- HeidiSQL Version:             9.4.0.5125
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+-- Dumping database structure for trademarket
+CREATE DATABASE IF NOT EXISTS `trademarket` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `trademarket`;
+
+-- Dumping structure for table trademarket.latest_news
+CREATE TABLE IF NOT EXISTS `latest_news` (
+  `latest_news_id` int(15) NOT NULL,
+  `latest_news_name` varchar(500) DEFAULT NULL,
+  `latest_news_url` varchar(500) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`latest_news_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table trademarket.latest_news: ~8 rows (approximately)
+/*!40000 ALTER TABLE `latest_news` DISABLE KEYS */;
+INSERT INTO `latest_news` (`latest_news_id`, `latest_news_name`, `latest_news_url`, `created_date`) VALUES
+	(899999999, 'Hope for double-digit revenue run rate by Q4FY17: Just Dial', NULL, '2017-09-25 06:31:26'),
+	(900000000, 'Why investors can stop freaking out over the Fed, in three words', NULL, '2017-09-25 06:31:26'),
+	(900000001, 'Two Fed rate hikes \'conceivable\' in 2016, Sept in play: Lockhart', NULL, '2017-09-25 06:31:26'),
+	(900000002, 'Dish TV, Videocon D2H in final stages of merger deal: Sources', NULL, '2017-09-25 06:31:26'),
+	(900000003, 'Cisco Systems to lay off about 14,000 employees: Report', NULL, '2017-09-25 06:31:26'),
+	(900000004, 'Ready to Talk on Terror Not on Kashmir: India Tells Pakistan', NULL, '2017-09-25 06:31:26'),
+	(900000005, 'The knowledge you need to take your SME ahead', NULL, '2017-09-25 06:31:26'),
+	(900000006, 'Click here for the best real estate investment advice', NULL, '2017-09-25 06:31:26');
+/*!40000 ALTER TABLE `latest_news` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
