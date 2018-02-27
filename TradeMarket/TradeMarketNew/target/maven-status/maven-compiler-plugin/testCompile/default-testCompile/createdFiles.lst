@@ -1,0 +1,6 @@
+com\console\web\controller\controller\MainControllerTest.class
+com\console\users\service\GainerLosersDaoServiceTest.class
+com\test\web\config\TestContext.class
+com\console\users\dao\GainerLosersDaoImplTest.class
+com\console\users\service\GainerLosersDaoServiceMockTest.class
+com\test\web\config\WebAppContext.class

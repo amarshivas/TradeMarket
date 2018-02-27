@@ -1,0 +1,288 @@
+package com.console.web.controller;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.LockedException;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.avaldes.model.Issuer;
+import com.console.users.command.SearchCommand;
+import com.console.users.model.LatestNews;
+import com.console.users.model.MostRead;
+import com.console.users.model.Sectors;
+import com.console.users.model.TopNews;
+import com.console.users.service.GainerLosersDaoService;
+import com.console.users.service.LatestNewsDaoService;
+import com.console.users.service.MostReadDaoService;
+import com.console.users.service.SectorsDaoService;
+import com.console.users.service.TopNewsDaoService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
+
+
+
+@Controller
+public class MainController {
+	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
+	
+    private Map<String, Issuer> issuers = new HashMap<String, Issuer>();
+	
+	public MainController() {
+		// pre-initialize the list of issuers available ...
+		
+		issuers.put("ATEN", new Issuer("ATEN", "A10 Networks Inc", "corp", "USA"));
+		issuers.put("AAPL", new Issuer("AAPL", "Apple Inc", "corp", "USA"));
+		issuers.put("T", new Issuer("T", "AT&T", "corp", "USA"));
+		issuers.put("CSCO", new Issuer("CSCO", "Cisco Systems, Inc.", "corp", "USA"));
+		issuers.put("CTXS", new Issuer("CTXS", "Citrix Systems, Inc.", "corp", "USA"));
+		issuers.put("GOOGL", new Issuer("GOOGL", "Google Inc", "corp", "USA"));
+		issuers.put("IBM", new Issuer("IBM", "IBM", "corp", "USA"));
+		issuers.put("JNPR", new Issuer("JNPR", "Juniper Networks, Inc.", "corp", "USA"));
+		issuers.put("MSFT", new Issuer("MSFT", "Microsoft Corporation", "corp", "USA"));
+		issuers.put("ORCL", new Issuer("ORCL", "Oracle Corporation", "corp", "USA"));
+	}
+	
+	@Autowired
+	LatestNewsDaoService latestNewsDaoService;
+	
+	@Autowired
+	TopNewsDaoService topNewsDaoService;
+	
+	@Autowired
+	MostReadDaoService mostReadDaoService;
+	
+	@Autowired
+	SectorsDaoService sectorsDaoService;
+	
+	@Autowired
+	GainerLosersDaoService gainerLosersDaoService;
+
+	
+	
+
+	/*@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
+	public ModelAndView defaultPage() {
+
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring Security + Hibernate Example");
+		model.addObject("message", "This is default page!");
+		model.setViewName("hello");
+		return model;
+
+	}
+
+	@RequestMapping(value = "/admin**", method = RequestMethod.GET)
+	public ModelAndView adminPage() {
+
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring Security + Hibernate Example");
+		model.addObject("message", "This page is for ROLE_ADMIN only!");
+		model.setViewName("admin");
+
+		return model;
+
+	}*/
+	
+	@RequestMapping(value = "/home**", method = RequestMethod.GET)
+	public ModelAndView homePage() {
+
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring Security + Hibernate Example");
+		model.addObject("message", "This page is for ROLE_ADMIN only!");
+		model.setViewName("home");
+
+		return model;
+
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
+
+		ModelAndView model = new ModelAndView();
+		if (error != null) {
+			model.addObject("error", getErrorMessage(request, "SPRING_SECURITY_LAST_EXCEPTION"));
+		}
+
+		if (logout != null) {
+			model.addObject("msg", "You've been logged out successfully.");
+			/*model.setViewName("login");
+			return model;*/
+		}
+		model.setViewName("login");
+		//model.setViewName("home");
+
+		return model;
+
+	}
+
+	// customize the error message
+	private String getErrorMessage(HttpServletRequest request, String key) {
+
+		Exception exception = (Exception) request.getSession().getAttribute(key);
+
+		String error = "";
+		if (exception instanceof BadCredentialsException) {
+			error = "Invalid username and password!";
+		} else if (exception instanceof LockedException) {
+			error = exception.getMessage();
+		} else {
+			error = "Invalid username and password!";
+		}
+
+		return error;
+	}
+
+	// for 403 access denied page
+	@RequestMapping(value = "/403", method = RequestMethod.GET)
+	public ModelAndView accesssDenied() {
+
+		ModelAndView model = new ModelAndView();
+
+		// check if user is login
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (!(auth instanceof AnonymousAuthenticationToken)) {
+			UserDetails userDetail = (UserDetails) auth.getPrincipal();
+			System.out.println(userDetail);
+
+			model.addObject("username", userDetail.getUsername());
+
+		}
+
+		model.setViewName("403");
+		return model;
+
+	}
+
+	
+	@RequestMapping(value = "/getLatestNews**", method = RequestMethod.GET)
+	public ModelAndView getLatestNews() {
+   System.out.println("controll in latest news");
+		List<LatestNews> listLatestNews = latestNewsDaoService.getAllLatestNews();
+		ModelAndView model = new ModelAndView();
+		System.out.println("@getLatestNews");
+		model.addObject("listLatestNews", listLatestNews);
+		model.setViewName("latestNews");
+
+		return model;
+
+	}
+	
+	
+	@RequestMapping(value = "/getTopNews**", method = RequestMethod.GET)
+	public ModelAndView getTopNews() {
+   
+		List<TopNews> listTopNews = topNewsDaoService.getAllTopNews();
+		ModelAndView model = new ModelAndView();
+		System.out.println("@getTopNews");
+		model.addObject("listTopNews", listTopNews);
+		model.setViewName("TopNews");
+
+		return model;
+
+	}
+	
+	@RequestMapping(value = "/getMostRead**", method = RequestMethod.GET)
+	public ModelAndView getMostRead() {
+		try {
+		
+	        System.out.println("in get most read");
+			List listMostRead = mostReadDaoService.getAllMostRead();
+			ModelAndView model = new ModelAndView();
+			System.out.println("@getMostRead");
+			model.addObject("listMostRead", listMostRead);
+			model.setViewName("mostRead");
+			return model;
+		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+	
+	
+	
+	
+	@RequestMapping(value = "/getSectors**", method = RequestMethod.GET)
+	public ModelAndView getSectors() {
+		try {
+		
+	        System.out.println("in get sectors");
+			List<Sectors> listSectors = sectorsDaoService.getAllSectors();
+			ModelAndView model = new ModelAndView();
+			System.out.println("@getSectors");
+			model.addObject("listSectors", listSectors);
+			model.setViewName("sectors");
+			return model;
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+
+	}
+	
+	@RequestMapping(value = "/getGainerLosers**", method = RequestMethod.GET)
+	public ModelAndView getGainerLosers() {
+		try {
+
+			System.out.println("in get sectors");
+			List listGainersLosers = gainerLosersDaoService.getAllgainerLosers();
+			ModelAndView model = new ModelAndView();
+			System.out.println("@getGainerLosers");
+			model.addObject("listGainersLosers", listGainersLosers);
+			model.setViewName("gainerLosers");
+			return model;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+
+	}
+	
+	
+	/*@RequestMapping(value = "/getgainersandlosers**", method = RequestMethod.GET)
+	public ModelAndView getGainersAndLosers() {
+       System.out.println("in get sectors");
+		List<Sectors> listSectors = sectorsDaoService.getAllSectors();
+		ModelAndView model = new ModelAndView();
+		System.out.println("@getSectors");
+		model.addObject("listSectors", listSectors);
+		model.setViewName("sectors");
+
+		return model;
+
+	}*/
+	
+	
+	@RequestMapping(value = "/welcome**", method = RequestMethod.GET)
+	public ModelAndView loadWelcome() {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("welcome");
+		return model;
+
+	}
+	
+}

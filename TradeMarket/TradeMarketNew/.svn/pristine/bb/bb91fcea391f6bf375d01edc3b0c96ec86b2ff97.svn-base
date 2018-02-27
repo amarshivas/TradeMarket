@@ -1,0 +1,67 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 10, 2017 at 01:44 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `trademarket`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `losers`
+--
+
+CREATE TABLE `losers` (
+  `loser_id` int(10) NOT NULL,
+  `company_name` varchar(20) DEFAULT NULL,
+  `company_url` varchar(20) DEFAULT NULL,
+  `price` float DEFAULT NULL,
+  `lose_per` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `losers`
+--
+
+INSERT INTO `losers` (`loser_id`, `company_name`, `company_url`, `price`, `lose_per`) VALUES
+(7750, '', 'Coal India', 339.05, 2.52),
+(7751, '', 'Larsen', 1482.1, 1.36),
+(7752, '', 'Tata Power', 76.9, 1.35),
+(7753, '', 'Tata Steel', 387.2, 1.19),
+(7754, '', 'Tech Mahindra', 469.5, 1.9),
+(7755, '', 'HDFC', 14278.9, 1.12),
+(7756, '', 'CIPLA', 3827.45, 1.31),
+(7757, '', 'VEDL', 11770.7, 23.83),
+(7758, '', 'HINDALCO', 5835.2, 24.21),
+(7759, '', 'IBULHSGFIN', 16859.5, 24.12),
+(7760, '', 'LT', 11120.1, 12.15),
+(7761, '', 'ITC', 19135.2, 16.17);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `losers`
+--
+ALTER TABLE `losers`
+  ADD PRIMARY KEY (`loser_id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

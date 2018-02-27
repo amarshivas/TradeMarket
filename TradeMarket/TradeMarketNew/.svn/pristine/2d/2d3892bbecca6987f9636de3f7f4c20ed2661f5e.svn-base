@@ -1,0 +1,198 @@
+function getTopNews() {
+	$.ajax({
+		type : "GET",
+		url : "/TradeMarket/getTopNews",
+		success : function(data) {
+			$("#home").html(data);
+			$("#home").addClass('active in');
+			if ($("#latestNews").hasClass('active')) {
+				$("#latestNews").removeClass('active');
+				$("#latestNews").removeClass('in');
+			}
+			if ($("#experts").hasClass('active')) {
+				$("#experts").removeClass('active');
+				$("#experts").removeClass('in');
+			}
+			if ($("#read").hasClass('active')) {
+				$("#read").removeClass('active');
+				$("#read").removeClass('in');
+
+			}
+		}
+	});
+}
+
+function getLatestNews() {
+
+	$.ajax({
+		type : "GET",
+		url : "/TradeMarket/getLatestNews",
+		success : function(data) {
+			$("#latestNews").html(data);
+			$("#latestNews").addClass('active in');
+			if ($("#home").hasClass('active')) {
+				$("#home").removeClass('active');
+				$("#home").removeClass('in');
+			}
+			if ($("#experts").hasClass('active')) {
+				$("#experts").removeClass('active');
+				$("#experts").removeClass('in');
+			}
+			if ($("#read").hasClass('active')) {
+				$("#read").removeClass('active');
+				$("#read").removeClass('in');
+
+			}
+
+		}
+	});
+}
+
+function getMostRead() {
+	alert("getMostRead in fun");
+	$.ajax({
+		type : "GET",
+		url : "/TradeMarket/getMostRead",
+		success : function(data) {
+			alert("data------>" + data);
+			$("#read").html(data);
+			$("#read").addClass('active in');
+			if ($("#latestNews").hasClass('active')) {
+				$("#latestNews").removeClass('active');
+				$("#latestNews").removeClass('in');
+			}
+			if ($("#experts").hasClass('active')) {
+				$("#experts").removeClass('active');
+				$("#experts").removeClass('in');
+			}
+			if ($("#home").hasClass('active')) {
+				$("#home").removeClass('active');
+				$("#home").removeClass('in');
+
+			}
+		}
+	});
+}
+
+function getTopNews() {
+	$.ajax({
+		type : "GET",
+		url : "/TradeMarket/getTopNews",
+		success : function(data) {
+			$("#home").html(data);
+			$("#home").addClass('active in');
+			if ($("#latestNews").hasClass('active')) {
+				$("#latestNews").removeClass('active');
+				$("#latestNews").removeClass('in');
+			}
+			if ($("#experts").hasClass('active')) {
+				$("#experts").removeClass('active');
+				$("#experts").removeClass('in');
+			}
+			if ($("#read").hasClass('active')) {
+				$("#read").removeClass('active');
+				$("#read").removeClass('in');
+
+			}
+		}
+	});
+}
+
+function getLatestNews() {
+	$.ajax({
+		type : "GET",
+		url : "/TradeMarket/getLatestNews",
+		success : function(data) {
+			$("#latestNews").html(data);
+			$("#latestNews").addClass('active in');
+			if ($("#home").hasClass('active')) {
+				$("#home").removeClass('active');
+				$("#home").removeClass('in');
+			}
+			if ($("#experts").hasClass('active')) {
+				$("#experts").removeClass('active');
+				$("#experts").removeClass('in');
+			}
+			if ($("#read").hasClass('active')) {
+				$("#read").removeClass('active');
+				$("#read").removeClass('in');
+
+			}
+
+		}
+	});
+}
+
+function getMostRead() {
+	$.ajax({
+		type : "GET",
+		url : "/TradeMarket/getMostRead",
+		success : function(data) {
+			$("#read").html(data);
+			$("#read").addClass('active in');
+			if ($("#latestNews").hasClass('active')) {
+				$("#latestNews").removeClass('active');
+				$("#latestNews").removeClass('in');
+			}
+			if ($("#experts").hasClass('active')) {
+				$("#experts").removeClass('active');
+				$("#experts").removeClass('in');
+			}
+			if ($("#home").hasClass('active')) {
+				$("#home").removeClass('active');
+				$("#home").removeClass('in');
+
+			}
+		}
+	});
+}
+
+function getSectors() {
+	$.ajax({
+		type : "GET",
+		url : "/TradeMarket/getSectors",
+		success : function(data) {
+			$("#myTabContent1").children('div').html(data);
+			
+			$("#sector-tab").parent().addClass('active');
+			if ($("#graph-tab").parent().hasClass('active')) {
+				$("#graph-tab").parent().removeClass('active');
+			}
+			if ($("#gainers-Losers-tab").parent().hasClass('active')) {
+				$("#gainers-Losers-tab").parent().removeClass('active');
+
+			}
+			if ($("#world-tab").parent().hasClass('active')) {
+				$("#world-tab").parent().removeClass('active');
+
+			}
+
+		}
+	});
+
+}
+
+function getGainerLosers() {
+	$.ajax({
+		type : "GET",
+		url : "/TradeMarket/getGainerLosers",
+		success : function(data) {
+			$("#myTabContent1").children('div').html(data);
+			$("#gainers-Losers-tab").parent().addClass('active');
+			
+			if ($("#graph-tab").parent().hasClass('active')) {
+				$("#graph-tab").parent().removeClass('active');
+			}
+			if ($("#sector-tab").parent().hasClass('active')) {
+				$("#sector-tab").parent().removeClass('active');
+
+			}
+			if ($("#world-tab").parent().hasClass('active')) {
+				$("#world-tab").parent().removeClass('active');
+
+			}
+
+		}
+	});
+
+}

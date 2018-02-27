@@ -1,0 +1,70 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 10, 2017 at 01:44 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `trademarket`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sectors`
+--
+
+CREATE TABLE `sectors` (
+  `sector_id` int(20) NOT NULL,
+  `sector_name` varchar(300) NOT NULL,
+  `sector_url` varchar(300) DEFAULT NULL,
+  `price_value` float NOT NULL,
+  `change_value` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sectors`
+--
+
+INSERT INTO `sectors` (`sector_id`, `sector_name`, `sector_url`, `price_value`, `change_value`) VALUES
+(999, 'S&P BSE Auto', '', 21526.2, 71.65),
+(1000, 'S&P BSE BANKEX', '', 22195.7, 358.34),
+(1001, 'Bank Nifty', '', 19352.8, 311.55),
+(1002, 'S&P BSE Capital Goods', '', 15068.5, 63.88),
+(1003, 'S&P BSE Consumer Durables', '', 12085.3, 58.88),
+(1004, 'S&P BSE FMCG', '', 8699.56, 10.03),
+(1005, 'S&P BSE Healthcare', '', 16202.8, 114.56),
+(1006, 'S&P BSE IT', '', 10589.5, 30.88),
+(1007, 'S&P BSE Metals', '', 10043.5, 53.3),
+(1008, 'S&P Oil & Gas', '', 10778.6, 81.19),
+(1009, 'S&P BSE PSU', '', 7457.49, 74.11),
+(1010, 'S&P BSE TECk', '', 5816.11, 1.17),
+(1011, 'S&P BSE Small Cap', '', 12403.7, 123.49),
+(1012, 'S&P BSE Mid-Cap', '', 12967.7, 56.1),
+(1013, 'Nifty Midcap 100', '', 15098.3, 114.4);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `sectors`
+--
+ALTER TABLE `sectors`
+  ADD PRIMARY KEY (`sector_id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

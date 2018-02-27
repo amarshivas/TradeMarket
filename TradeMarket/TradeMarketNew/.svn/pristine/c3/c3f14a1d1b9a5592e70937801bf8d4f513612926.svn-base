@@ -1,0 +1,102 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page isELIgnored="false" %>
+<div class="wthree_asia_europe">
+                                 <h4><b>Asia</b></h4>
+                                 <table class="w3_agile_all_trade w3_table_trade">
+                                    <tbody>
+									<c:forEach items="${listWorldData}" var="listWorldDataVar">
+                                       <tr>
+                                          <th>
+                                             <a href="https://p.w3layouts.com/demos/sep-2016/15-09-2016/trade_market/web/single.html">
+                                             ${listWorldDataVar.indexName}
+                                             <span style="font-size:9px; font-family:arial; color:#666666;font-weight:normal;">(Aug 18)</span>
+                                             </a>
+                                          </th>
+                                          <td class="agileits_w3layouts_td">${listWorldDataVar.price}</td>
+                                          <td class="agileits_w3layouts_td" style="color:#ff5000">${listWorldDataVar.value}</td>
+                                       </tr>
+									   </c:forEach>
+                                       <!--<tr>
+                                          <th>
+                                             <a href="https://p.w3layouts.com/demos/sep-2016/15-09-2016/trade_market/web/single.html">Straits Times
+                                             <span style="font-size:9px; font-family:arial; color:#666666;font-weight:normal;">(Aug 18)</span>
+                                             </a>
+                                          </th>
+                                          <td class="agileits_w3layouts_td">2836.98</td>
+                                          <td class="agileits_w3layouts_td" style="color:#ff5000">-6.34</td>
+                                       </tr>
+                                       <tr>
+                                          <th>
+                                             <a href="https://p.w3layouts.com/demos/sep-2016/15-09-2016/trade_market/web/single.html">Hang Seng
+                                             <span style="font-size:9px; font-family:arial; color:#666666;font-weight:normal;">(Aug 18)</span>
+                                             </a>
+                                          </th>
+                                          <td class="agileits_w3layouts_td">23023.16</td>
+                                          <td class="agileits_w3layouts_td" style="color:#00AA00">223.38</td>
+                                       </tr>
+                                       <tr>
+                                          <th>
+                                             <a href="https://p.w3layouts.com/demos/sep-2016/15-09-2016/trade_market/web/single.html">Taiwan Index
+                                             <span style="font-size:9px; font-family:arial; color:#666666;font-weight:normal;">(Aug 18)</span>
+                                             </a>
+                                          </th>
+                                          <td class="agileits_w3layouts_td">9122.50</td>
+                                          <td class="agileits_w3layouts_td" style="color:#00AA00">4.80</td>
+                                       </tr>
+                                       <tr>
+                                          <th>
+                                             <a href="https://p.w3layouts.com/demos/sep-2016/15-09-2016/trade_market/web/single.html">KOSPI
+                                             <span style="font-size:9px; font-family:arial; color:#666666;font-weight:normal;">(Aug 18)</span>
+                                             </a>
+                                          </th>
+                                          <td class="agileits_w3layouts_td">2055.47</td>
+                                          <td class="agileits_w3layouts_td" style="color:#00AA00">11.72</td>
+                                       </tr>
+                                       <tr>
+                                          <th>
+                                             <a href="https://p.w3layouts.com/demos/sep-2016/15-09-2016/trade_market/web/single.html">Shanghai Composite
+                                             <span style="font-size:9px; font-family:arial; color:#666666;font-weight:normal;">(Aug 18)</span>
+                                             </a>
+                                          </th>
+                                          <td class="agileits_w3layouts_td">3104.32</td>
+                                          <td class="agileits_w3layouts_td" style="color:#ff5000">-5.23</td>
+                                       </tr>-->
+                                    </tbody>
+                                 </table>
+                                 <h4><b>Europe</b></h4>
+                                 <table class="w3_agile_all_trade w3_table_trade">
+                                    <tbody>
+									<c:forEach items="${secondlistWorldData}" var="secondlistWorldDataVar">
+                                       <tr>
+                                          <th>
+                                             <a href="https://p.w3layouts.com/demos/sep-2016/15-09-2016/trade_market/web/single.html">
+                                             ${secondlistWorldDataVar.indexName}
+                                             <span style="font-size:9px; font-family:arial; color:#666666;font-weight:normal;">(Aug 18)</span>
+                                             </a>
+                                          </th>
+                                          <td class="agileits_w3layouts_td">${secondlistWorldDataVar.price}</td>
+                                          <td class="agileits_w3layouts_td" style="color:#00AA00">${secondlistWorldDataVar.value}</td>
+                                       </tr>
+									   </c:forEach>
+                                       <!--<tr>
+                                          <th>
+                                             <a href="https://p.w3layouts.com/demos/sep-2016/15-09-2016/trade_market/web/single.html">CAC
+                                             <span style="font-size:9px; font-family:arial; color:#666666;font-weight:normal;">(Aug 18)</span>
+                                             </a>
+                                          </th>
+                                          <td class="agileits_w3layouts_td">4421.19</td>
+                                          <td class="agileits_w3layouts_td" style="color:#00AA00">3.51</td>
+                                       </tr>
+                                       <tr>
+                                          <th>
+                                             <a href="https://p.w3layouts.com/demos/sep-2016/15-09-2016/trade_market/web/single.html">DAX
+                                             <span style="font-size:9px; font-family:arial; color:#666666;font-weight:normal;">(Aug 18)</span>
+                                             </a>
+                                          </th>
+                                          <td class="agileits_w3layouts_td">10573.80</td>
+                                          <td class="agileits_w3layouts_td" style="color:#00AA00">36.13</td>
+                                       </tr>-->
+                                    </tbody>
+                                 </table>
+                              </div>

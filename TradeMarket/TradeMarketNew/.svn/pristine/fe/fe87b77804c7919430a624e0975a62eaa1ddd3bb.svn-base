@@ -1,0 +1,67 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 10, 2017 at 01:45 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `trademarket`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gainers`
+--
+
+CREATE TABLE `gainers` (
+  `gainer_id` int(10) NOT NULL,
+  `company_name` varchar(20) NOT NULL,
+  `price` float NOT NULL,
+  `gain_per` float NOT NULL,
+  `company_url` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gainers`
+--
+
+INSERT INTO `gainers` (`gainer_id`, `company_name`, `price`, `gain_per`, `company_url`) VALUES
+(6650, 'UltraTechCement', 3874.35, 4.73, ''),
+(6651, 'Power Grid Corp', 182, 4.21, ''),
+(6652, 'IndusInd Bank', 1194.6, 3.56, ''),
+(6653, 'NTPC', 166.8, 3.25, ''),
+(6654, 'Adani Ports', 275.45, 2.91, ''),
+(6655, 'SUNPHARMA', 20291.9, 3.12, ''),
+(6656, 'RELIANCE', 77604.1, 12.45, ''),
+(6657, 'DRREDDY', 9842.9, 23.18, ''),
+(6658, 'LUPIN', 12848.3, 24.9, ''),
+(6659, 'BANKBARODA', 15080.7, 18.17, ''),
+(6660, 'ACC', 13481, 42.56, ''),
+(6661, 'AUROPHARMA', 113481, 28.26, '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `gainers`
+--
+ALTER TABLE `gainers`
+  ADD PRIMARY KEY (`gainer_id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
