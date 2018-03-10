@@ -1,0 +1,12 @@
+com\jcg\examples\authentication\CustomAuthenticationProvider.class
+com\jcg\examples\dao\LatestNewsDao.class
+com\jcg\examples\model\TopNews.class
+com\jcg\examples\dao\TopNewsDao.class
+com\jcg\examples\model\LatestNews.class
+com\jcg\examples\authentication\CustomSuccessHandler.class
+com\jcg\examples\authentication\CustomEntryPoint.class
+com\jcg\examples\services\LatestNewsDaoService.class
+com\jcg\examples\controller\CustomController.class
+com\jcg\examples\dao\TopNewsDaoImpl.class
+com\jcg\examples\services\TopNewsDaoService.class
+com\jcg\examples\dao\LatestNewsDaoImpl.class
